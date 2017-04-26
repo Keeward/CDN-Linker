@@ -189,7 +189,7 @@ class URI_changer
 	 * @param String $content the raw HTML of the page from Wordpress, meant to be returned to the requester but intercepted here
 	 * @return String modified HTML with replaced links - will be served by the HTTP server to the requester
 	 */
-	public function rewrite(&$content) {
+	public function rewrite($content) {
 		if ($this->https_deactivates_rewriting && isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == 'on') {
 			return $content;
 		}
